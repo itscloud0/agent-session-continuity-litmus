@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agent-session-continuity-litmus"
+version = "0.1.0"
+description = "Native compaction and session-resume continuity fixtures for installed coding-agent clients."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Ilia Sorokin" }]
+license = { file = "LICENSE" }
+keywords = [
+  "coding-agent",
+  "agent-testing",
+  "context-compaction",
+  "session-resume",
+  "context-loss",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Testing",
+]
+
+[project.urls]
+Repository = "https://github.com/itscloud0/agent-session-continuity-litmus"
+Issues = "https://github.com/itscloud0/agent-session-continuity-litmus/issues"
+
+[project.scripts]
+agent-session-continuity-litmus = "agent_session_continuity_litmus.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/agent_session_continuity_litmus"]
