@@ -24,3 +24,4 @@ The completed-artifact/unresolved-decision and wait-for-user profiles were added
 - Python 3.12 compileall passed with its cache redirected to a writable temporary directory.
 - Sixteen additional live paths completed for the two new profiles; all scored 6/6 with exact artifact bytes and no post-boundary tools.
 - Wheel and source distribution built successfully; a clean Python 3.12 virtual environment installed the wheel and passed the installed CLI smoke.
+- Private-first GitHub Actions run `29739469184` passed all nine jobs across Ubuntu, macOS, and Windows with Python 3.10–3.12.

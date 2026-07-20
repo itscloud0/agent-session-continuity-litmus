@@ -38,4 +38,4 @@ The primary comparison is each client's compacted result against its own same-fi
 
 The three-profile, two-client, two-repetition controlled matrix is complete. All 12 paired baselines passed; 11/12 native-compaction paths passed; the remaining opencode path drifted on exact intent only after compaction. Boundary completion, raw captures, exact artifacts, no-tool phase two, package build/install, local tests, safety review, limitations, and discoverability evidence are present.
 
-The remaining publication gate is remote CI after private-first push. If CI passes, public release and handoff are allowed; otherwise fix reasonable CI failures before publication.
+Private-first GitHub Actions run `29739469184` passed all nine Ubuntu, macOS, and Windows jobs on Python 3.10, 3.11, and 3.12. The remote CI gate is `PASS`; public release and handoff are allowed after the documentation-only evidence commit also passes CI.
