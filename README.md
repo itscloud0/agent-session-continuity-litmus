@@ -6,11 +6,25 @@ The guarded CLI runs the same opaque-field fixture through a no-compaction basel
 
 ## Quickstart
 
-Python 3.10+ and an authenticated supported client are required. Live runs may consume model quota and require explicit opt-in.
+Python 3.10+ and an authenticated supported client are required for live runs. The package is not published to PyPI yet, so install it from a checkout:
 
 ```console
-PYTHONPATH=src python -m agent_session_continuity_litmus fixture
-PYTHONPATH=src python -m agent_session_continuity_litmus run \
+git clone https://github.com/itscloud0/agent-session-continuity-litmus.git
+cd agent-session-continuity-litmus
+python3 -m venv .venv
+.venv/bin/python -m pip install .
+```
+
+Run the offline fixture smoke first; it does not contact a coding-agent client or consume model quota:
+
+```console
+.venv/bin/agent-session-continuity-litmus fixture --profile opaque-task-contract
+```
+
+Live runs may consume model quota and require explicit opt-in. Before a live run, install and authenticate the selected client, then confirm its executable is on `PATH` (for example, `codex --version` or `opencode --version`).
+
+```console
+.venv/bin/agent-session-continuity-litmus run \
   --adapter codex-cli \
   --profile opaque-task-contract \
   --profile completed-artifact-unresolved-decision \
