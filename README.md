@@ -6,25 +6,33 @@ The guarded CLI runs the same opaque-field fixture through a no-compaction basel
 
 ## Quickstart
 
-Python 3.10+ and an authenticated supported client are required for live runs. The package is not published to PyPI yet, so install it from a checkout:
+Python 3.10+ and an authenticated supported client are required for live runs. PyPI publication is not available yet, but the public `v0.1.0` tag can be installed without cloning:
 
 ```console
-git clone https://github.com/itscloud0/agent-session-continuity-litmus.git
-cd agent-session-continuity-litmus
-python3 -m venv .venv
-.venv/bin/python -m pip install .
+python3 -m pip install "git+https://github.com/itscloud0/agent-session-continuity-litmus@v0.1.0"
+# Or install an isolated command with pipx:
+pipx install "git+https://github.com/itscloud0/agent-session-continuity-litmus@v0.1.0"
+# Or use uv's managed tool environment:
+uv tool install --from "git+https://github.com/itscloud0/agent-session-continuity-litmus@v0.1.0" agent-session-continuity-litmus
 ```
 
 Run the offline fixture smoke first; it does not contact a coding-agent client or consume model quota:
 
 ```console
-.venv/bin/agent-session-continuity-litmus fixture --profile opaque-task-contract
+agent-session-continuity-litmus fixture --profile opaque-task-contract
+```
+
+For a one-off offline smoke without a checkout or persistent install, use `uvx`:
+
+```console
+uvx --from "git+https://github.com/itscloud0/agent-session-continuity-litmus@v0.1.0" \
+  agent-session-continuity-litmus fixture --profile opaque-task-contract
 ```
 
 Live runs may consume model quota and require explicit opt-in. Before a live run, install and authenticate the selected client, then confirm its executable is on `PATH` (for example, `codex --version` or `opencode --version`).
 
 ```console
-.venv/bin/agent-session-continuity-litmus run \
+agent-session-continuity-litmus run \
   --adapter codex-cli \
   --profile opaque-task-contract \
   --profile completed-artifact-unresolved-decision \

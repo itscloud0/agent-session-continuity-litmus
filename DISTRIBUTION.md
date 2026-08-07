@@ -14,4 +14,8 @@
 - Python package search after package publication is separately justified.
 - Coding-agent reliability and developer-tool communities through a technical benchmark write-up.
 
+## Checkout-free installation
+
+The package is not published to PyPI yet. The public `v0.1.0` tag supports reproducible no-checkout installs through `pip`, `pipx`, `uv tool`, and one-off `uvx` runs. README commands pin the tag so the evaluated fixture does not silently move with `main`.
+
 No outreach will imply maintainer endorsement, users, adoption, or traction that has not been observed.
