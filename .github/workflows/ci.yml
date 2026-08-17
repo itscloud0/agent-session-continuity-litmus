@@ -28,3 +28,14 @@ jobs:
         run: python -m compileall -q src tests
       - name: CLI smoke
         run: agent-session-continuity-litmus fixture --profile wait-for-user-state --repetition 2
+
+  public-install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install public release
+        run: python -m pip install "git+https://github.com/itscloud0/agent-session-continuity-litmus@v0.1.0"
+      - name: Offline fixture smoke
+        run: agent-session-continuity-litmus fixture --profile opaque-task-contract
