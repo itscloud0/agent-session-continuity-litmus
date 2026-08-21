@@ -36,6 +36,6 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install public release
-        run: python -m pip install "git+https://github.com/itscloud0/agent-session-continuity-litmus@v0.1.0"
+        run: python -m pip install "git+https://github.com/itscloud0/agent-session-continuity-litmus@9c02cecf2a644317a6a99469450b43199f0e6da8"
       - name: Offline fixture smoke
         run: agent-session-continuity-litmus fixture --profile opaque-task-contract
