@@ -1,5 +1,16 @@
 # Validation Results
 
+## 2026-08-31 workflow reproducibility hardening
+
+The CI workflow now pins checkout v4 and setup-python v5 to the exact commits
+resolved from their reviewed tags. A workflow regression test requires every
+external action call site to remain a full 40-character commit pin.
+
+Local verification passed the unit suite, compileall, workflow pin test, and
+`git diff --check`. The public Actions run for this commit is the final
+verification of the supported Ubuntu/macOS/Windows Python matrix and the
+immutable public-release install smoke.
+
 ## 2026-07-19 guarded live matrix
 
 The opaque-task-contract profile ran twice per client. Every repetition used fresh field values and separate baseline and native-compaction sessions.
