@@ -7,9 +7,9 @@ resolved from their reviewed tags. A workflow regression test requires every
 external action call site to remain a full 40-character commit pin.
 
 Local verification passed the unit suite, compileall, workflow pin test, and
-`git diff --check`. The public Actions run for this commit is the final
-verification of the supported Ubuntu/macOS/Windows Python matrix and the
-immutable public-release install smoke.
+`git diff --check`. Public Actions run `33423682513` passed for commit
+`045702d7a990643055c9a5074cccc24dc26a8e61`, covering the supported
+Ubuntu/macOS/Windows Python matrix and immutable public-release install smoke.
 
 ## 2026-07-19 guarded live matrix
 
